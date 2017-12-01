@@ -10,9 +10,8 @@ end mux4;
 architecture synth of mux4 is
 
 begin
-    with s select y <=
-        d0 when "00",
-        d1 when "01",
-        d2 when "10",
-        d3 when others;
+    y <= d0 when s = "00" else
+         d1 when s = "01" else
+         d2 when s = "10" else
+         d3;
 end synth;
